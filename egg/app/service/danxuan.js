@@ -40,17 +40,17 @@ class DanxuanService extends Service {
     //     return studentList
     // }
      // 联查学生信息
-     async () {
-        const studentList = await this.app.model.Students.findAll({
-            include:[{  //联查班级的数据
-                model:this.app.model.Clazz,
-                as:'clazz'
-            }]
-        });
-        await this.ctx.render('student_list.html', {
-            studentList: studentList
-        })
-    }
+    //  async () {
+    //     const studentList = await this.app.model.Students.findAll({
+    //         include:[{  //联查班级的数据
+    //             model:this.app.model.Clazz,
+    //             as:'clazz'
+    //         }]
+    //     });
+    //     await this.ctx.render('student_list.html', {
+    //         studentList: studentList
+    //     })
+    // }
 }
 
 module.exports = DanxuanService;

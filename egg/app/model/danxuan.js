@@ -12,11 +12,11 @@ module.exports = app => {
         three:STRING,
         four:STRING,
     })
-    Danxuan.associate = function () {
-        app.model.Danxuan.belongsTo(app.model.gfz, {  //设置外键
-            foreignKey: 'clazz_id',//关联的外键
-            as: 'clazz'//将关联的数据显示到该字段上
-        })
-    }
+    // Danxuan.associate = function () {
+    //     app.model.Danxuan.belongsTo(app.model.gfz, {  //设置外键
+    //         foreignKey: 'clazz_id',//关联的外键
+    //         as: 'clazz'//将关联的数据显示到该字段上
+    //     })
+    // }
     return Danxuan;
 }

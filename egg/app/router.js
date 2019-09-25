@@ -14,7 +14,7 @@ module.exports = app => {
   router.post('/gfpost',controller.gf.post)
 
   router.post('/danxuapost',controller.danxuan.post)
-  router.get('/danxuaget',controller.danxuan.get)
+  // router.get('/danxuaget',controller.danxuan.get)
 
 
   router.post('/mspost',controller.ms.post)
