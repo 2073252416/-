@@ -6,7 +6,7 @@ class DanxuanController extends Controller {
   //添加试题
   async post() {
     const danxuanlast = await this.ctx.service.danxuan.post()
-    this.ctx.body=danxuanlast
+    this.ctx.body = danxuanlast
   }
   //查询试题
     // async delete() {  
@@ -16,6 +16,10 @@ class DanxuanController extends Controller {
     //         //查询条件和结果自定义
     //     })
     // }
+   async get (){
+     const danxuanlist = await this.ctx.service.danxuan.getdanxaunlist()
+     this.ctx.body=danxuanlist
+   }
 // 删除试题
 // async destroy() {
 //   const studentList = await this.ctx.service.student.deleteStudentlist();

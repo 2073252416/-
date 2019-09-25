@@ -16,12 +16,13 @@ class DanxuanService extends Service {
             four:name. four,
         }
         await this.app.model.Danxuan.create(add)
+        
     }
     // 查询
-    // async getdanxaunlist() {
-    //     const danxuanList = await this.app.model.Danxuan.findAll();
-    //     return danxuanList
-    // }
+    async getdanxaunlist() {
+        const danxuanList = await this.app.model.Danxuan.findAll();
+        return danxuanList
+    }
     // 删除
     // async deletedanxuanlist() {
     //     let id = this.ctx.params.id

@@ -7,10 +7,18 @@
             </ul>
         </div>
             <ul class="Left">
-                <li class="Left_li">近期发布</li>
-                <li class="Left_li2">试卷批阅</li>
-                <li class="Left_li3"></li>
-                <li class="Left_li4">设置</li>
+                <router-link to="/Epm">
+                    <li class="Left_li">题库管理</li>
+                </router-link>
+                <router-link to="/Marking">
+                    <li class="Left_li2">试卷批阅</li>
+                </router-link>
+                <router-link to="/Randomgeneration">
+                    <li class="Left_li3">随机生成</li>
+                </router-link>
+                <router-link to="/Manualmarking">
+                    <li class="Left_li4">人工出卷</li>
+                </router-link>
             </ul>
         <div class="Right">
             <div class="Cons">
@@ -27,9 +35,9 @@
                     <div style="width: 93.3%;border-bottom: 1px solid #E6E6E6;margin-left: 2.6%;"></div>
                     <ul class="CT_zhong">
                         <li class="CT_lits">试卷管理</li>
-                        <li class="CtLright">删除</li>
-                        <li class="CtLright2">模板录入</li>
-                        <router-link to="/MultiplesElection"><li class="CtLright3">我要出卷 + </li></router-link>
+                        <router-link to=""><li class="CtLright">删除</li></router-link>
+                        <router-link to=""><li class="CtLright2">模板录入</li></router-link>
+                        <router-link to="/MultiplesElection"><li class="CtLright3">我要出题 + </li></router-link>
                     </ul>
 <template>
   <el-table ref="multipleTable" :data="tableData" tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange">
@@ -125,7 +133,7 @@ export default {
     .Left_li{
         width: 100%;
         height: 4.9%;
-        background-color: #84A4BB;
+        background-color: #5D8FB2;
         margin-top: 50px;
         color: #ffffff;
         line-height: 50px;
