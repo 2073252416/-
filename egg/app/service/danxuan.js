@@ -16,29 +16,53 @@ class DanxuanService extends Service {
             four:name. four,
         }
         await this.app.model.Danxuan.create(add)
+        
     }
     // 查询
-    // async getdanxaunlist() {
-    //     const danxuanList = await this.app.model.Danxuan.findAll();
-    //     return danxuanList
-    // }
+    async getdanxaunlist() {
+        const danxuanList = await this.app.model.Danxuan.findAll();
+        return danxuanList
+    }
     // 删除
-    // async deletedanxuanlist() {
-    //     let id = this.ctx.params.id
-    //     const student = await this.app.model.Danxuan.findOne({
-    //         where: {
-    //             id: id
-    //         }
-    //     })
-    //     const studentList = await this.app.model.Students.findAll({
-    //         include: [{  //联查试题数据
-    //             model: this.app.model.Clazz,
-    //             as: 'clazz'
-    //         }]
-    //     });
-    //     student.destroy()
-    //     return studentList
-    // }
+    async deletedanxuanlist() {
+        let id = this.ctx.params.id
+        const danxua = await this.app.model.Danxuan.findOne({
+            where: {
+                id: id
+            }
+        })
+        const danxuas = await this.app.model.Danxuan.findAll();
+        danxua.destroy()
+        return danxuas
+    }
+    // 修改
+    async danxuanlistput() {
+        let id = this.ctx.params.id
+        const putclazz = this.ctx.request.body.putclazz
+        const putA = this.ctx.request.body.putclazz2
+        const putB = this.ctx.request.body.putclazz3
+        const putC = this.ctx.request.body.putclazz4
+        const putD = this.ctx.request.body.putclazz5
+        const putThree = this.ctx.request.body.putclazz6
+        const putFlour = this.ctx.request.body.putclazz7
+        let row = {
+            Choice_question:putclazz,
+            A: putA,
+            B:putB,
+            C:putC,
+            D:putD,
+            three:putThree,
+            four:putFlour,
+        },
+        options = {
+            where:{
+                id:id
+            }
+        }
+        await this.app.model.Danxuan.update(row, options);
+        const danxuas = await this.app.model.Danxuan.findAll();
+        return danxuas
+    } 
      // 联查学生信息
     //  async () {
     //     const studentList = await this.app.model.Students.findAll({

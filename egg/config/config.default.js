@@ -29,7 +29,7 @@ module.exports = appInfo => {
     host: 'localhost',
     port: '3306',
     username: 'root',
-    password: '123456',
+    password: '',
     operatorsAliases: false,
   }
 
@@ -42,7 +42,7 @@ module.exports = appInfo => {
       enable: false,
       ignoreJSON: true
     },
-    domainWhiteList: ['http://localhost:8080','http://localhost:8080/#/','http://192.168.43.58:8080',' http://192.168.43.58:8080'], //配置白名单
+    domainWhiteList: ['http://localhost:8080','http://localhost:8085','http://192.168.43.58:8080',' http://192.168.43.58:8080'], //配置白名单
 };
   
 config.cors = {

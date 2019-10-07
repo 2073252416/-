@@ -13,6 +13,7 @@ module.exports = app => {
         b:STRING,
         c:STRING,
         d:STRING,
+        // 难度
         difficulty:STRING
     })
 
