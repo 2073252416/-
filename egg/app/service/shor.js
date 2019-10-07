@@ -2,8 +2,8 @@
 
 const Service = require('egg').Service;
 
-class GfService extends Service {
-    async gfpost() {
+class ShorService extends Service {
+    async shorpost() {
         let name = await this.ctx.request.body;
         const sudent = {
             title:name.title,
@@ -11,24 +11,24 @@ class GfService extends Service {
             difficulty:name.difficulty
 
         }
-        await this.app.model.Gfz.create(sudent)
+        await this.app.model.Shorz.create(sudent)
     }
-    async getgflist() {
-        const gfList = await this.app.model.Gfz.findAll();
-        return gfList
+    async getshorlist() {
+        const shorList = await this.app.model.Shorz.findAll();
+        return shorList
     }
-    async deletegflist() {
+    async deleteshorlist() {
         let id = this.ctx.params.id
-        const gfs = await this.app.model.Gfz.findOne({
+        const shors = await this.app.model.Shorz.findOne({
             where: {
                 id: id
             } 
         })
-       const gf = await this.app.model.Gfz.findAll();
-        gfs.destroy();
-        return gf
+       const shor = await this.app.model.Shorz.findAll();
+        shors.destroy();
+        return shor
     }
-    async gfput() {
+    async shorput() {
         let id = this.ctx.params.id
         let title = this.ctx.request.body.title
         let row = {
@@ -39,10 +39,10 @@ class GfService extends Service {
                     id: id
                 }
             }
-        await this.app.model.Gfz.update(row, options);
-        const gfList = await this.app.model.Gfz.findAll();
-        return gfList
+        await this.app.model.Shorz.update(row, options);
+        const shorList = await this.app.model.Shorz.findAll();
+        return shorList
     }
 }
 
-module.exports = GfService;
+module.exports = ShorService;

@@ -24,7 +24,16 @@ module.exports = app => {
   router.delete('/danxuadelete:id',controller.danxuan.destroy)
   router.put('/danxuput:id',controller.danxuan.put)
 
-  
+    router.post('/gfpost',controller.gf.gfpost)
+  router.get('/gfget',controller.gf.gfget)
+  router.delete('/gfdel:id',controller.gf.gfdelete)
+  router.put('/gfput:id',controller.gf.gfupdate);
+
+  router.post('/shorpost',controller.shor.shorpost)
+  router.get('/shorget',controller.shor.shorget)
+  router.delete('/shordel:id',controller.shor.shordelete)
+  router.put('/shorput:id',controller.shor.shorupdate);
+
 // 多选
   router.get('/msget',controller.ms.get)
 
