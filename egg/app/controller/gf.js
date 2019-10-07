@@ -11,6 +11,18 @@ class GfController extends Controller {
     const gfclass = await this.ctx.service.gf.post()
     this.ctx.body=gfclass
   }
+  async gfget (){
+    const gflist = await this.ctx.service.gf.getgflist()
+    this.ctx.body=gflist
+  }
+  async gfdelete(){
+    const gfList = await this.ctx.service.gf.deletegflist();
+        this.ctx.body = gfList
+   }
+   async gfupdate() {
+    const gfList = await this.ctx.service.gf.gfput();
+    this.ctx.body = gfList
+}
 }
 
 module.exports = GfController;
