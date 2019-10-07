@@ -4,7 +4,7 @@ module.exports = app => {
     } = app.Sequelize;
 
     const Random  = app.model.define('Random',{
-        
+        name:STRING,
     });
 
     return Random;
