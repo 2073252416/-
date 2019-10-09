@@ -12,5 +12,26 @@ module.exports = app => {
         three:STRING,
         four:STRING,
     });
+
+    Danxua.associate = function(){
+        app.model.Danxuan.belongsTo(app.model.Random,{
+            foreignKey:'random_id',
+            targetKey: 'id',
+        })
+    }
+    
     return Danxua;
+
+
+
+
+    
+    // Danxua.associate = function(){
+    //     app.model.Danxuan.hasMany(app.model.Random,{
+    //         foreignKey:'danxua_id',
+    //         targetKey: 'id',
+    //     })
+    // }
+
+   
 }

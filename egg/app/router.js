@@ -29,22 +29,22 @@ module.exports = app => {
   router.delete('/msdelete:id',controller.ms.destroy);
   router.put('/msput:id',controller.ms.put);
 
-// gf
+// gf填空题
   router.get('/gfget',controller.gf.gfget);
   router.delete('/gfdel:id',controller.gf.gfdelete);
   router.put('/gfput:id',controller.gf.gfupdate);
   router.post('/gfpost',controller.gf.post);
 
-//saq
+//saq简答
  router.get('/saqget',controller.saq.saqget);
  router.delete('/saqdel:id',controller.saq.saqdelete);
  router.put('/saqput:id',controller.saq.saqput);
  router.post('/saqpost',controller.saq.post);
 
-// 随机生成 + 
-  router.get('/Random',controller.random.get);
-
-  
+// 随机生成 +     
+  router.get('/random',controller.random.get);
+  router.post('/randompost',controller.random.post);
+  router.delete('/randel:id',controller.random.rdelete);
 
 
 

@@ -7,7 +7,14 @@ module.exports = app => {
         title: STRING,
         answer: STRING,
         difficulty:STRING
-    })
+    });
+
+    Saqz.associate = function(){
+        app.model.Saqz.belongsTo(app.model.Random,{
+            foreignKey:'random_id',
+            targetKey:'id',
+        })
+    }
     
     return Saqz
     ;

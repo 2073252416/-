@@ -14,6 +14,7 @@ class DanxuanService extends Service {
             D:name.D,
             three:name.three,
             four:name. four,
+            random_id:name.id
         }
         await this.app.model.Danxuan.create(add)
         

@@ -15,7 +15,14 @@ module.exports = app => {
         d:STRING,
         // 难度
         difficulty:STRING
-    })
+    });
+
+    Ms.associate = function(){
+        app.model.Ms.belongsTo(app.model.Random,{
+            foreignKey:'random_id',
+            targetKey:'id',
+        })
+    }
 
     return Ms;
 }
