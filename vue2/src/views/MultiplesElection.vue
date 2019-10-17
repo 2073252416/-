@@ -76,6 +76,7 @@ export default {
             D:"",
             three:"",
             Choice_question:"",
+            Question:"单选题",
         }
         
     },
@@ -98,6 +99,7 @@ export default {
           C:this.C,
           D:this.D,
           three:this.three,  
+          Question:this.Question
       })
       .then(
 

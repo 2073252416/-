@@ -45,7 +45,6 @@
         </div>
     </div>
 </template>
-
 <style scope>
 *{
     margin: 0;

@@ -7,16 +7,24 @@
             </ul>
         </div>
             <ul class="Left">
-                <li class="Left_li">近期发布</li>
-                <li class="Left_li2">试卷批阅</li>
-                <li class="Left_li3"></li>
-                <li class="Left_li4">设置</li>
+                <router-link to="/Epm">
+                    <li class="Left_li">题库管理</li>
+                </router-link>
+                <router-link to="/Marking">
+                    <li class="Left_li2">试卷批阅</li>
+                </router-link>
+                <router-link to="/Randomgeneration">
+                    <li class="Left_li3">随机生成</li>
+                </router-link>
+                <router-link to="/Manualmarking">
+                    <li class="Left_li4">人工出卷</li>
+                </router-link>
             </ul>
         <div class="Right">
             <div class="Cons">
                     <ul class="Cons_top">
                         <li class="CT_left"><img style="float: left;" src="../imgs/06.jpg" alt="">
-                            <h6 style="float: left;" class="CT_h">试卷数量</h6>
+                            <h6 style="float: left;" class="CT_h">试题数量</h6>
                             <span style="float:right;margin-top: 12px;">5</span>
                         </li>
                         <li class="CT_right"><img style="float: left;" src="../imgs/07.jpg" alt="">
@@ -25,28 +33,74 @@
                         </li>
                     </ul>
                     <div style="width: 93.3%;border-bottom: 1px solid #E6E6E6;margin-left: 2.6%;"></div>
-                    <ul class="CT_zhong">
-                        <li class="CT_lits">试卷管理</li>
-                        <li class="CtLright">删除</li>
-                        <li class="CtLright2">模板录入</li>
-                        <router-link to="/MultiplesElection"><li class="CtLright3">我要出卷 + </li></router-link>
-                    </ul>
 <template>
-  <el-table ref="multipleTable" :data="tableData" tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange">
+    <ul class="CT_zhong">
+        <li class="CT_lits">试题管理</li>
+        <!-- <router-l  ink to=""><li class="CtLright" @click="open(scope.row.id)">删除</li></router-link> -->
+        <router-link to=""><li class="CtLright2">模板录入</li></router-link>
+        <router-link to="/MultiplesElection"><li class="CtLright3">我要出题 + </li></router-link>
+    </ul>
+    <el-table ref="singleTable" :data="tableData" highlight-current-row @current-change="handleCurrentChange" style="width: 100%">
+  <el-table-column ref="multipleTable" :data="tableData" tooltip-effect="dark" width="10" style="width: 100%" @selection-change="handleSelectionChange"></el-table-column>
     <el-table-column type="selection" width="55"></el-table-column>
+    <el-table-column type="index" width="50"></el-table-column>
     <el-table-column   label="试题标题"  width="200">
     <template slot-scope="scope">{{scope.row.Choice_question}}</template>
     </el-table-column>
     <el-table-column  label="试题难度"  width="200">
-         <template slot-scope="scope">{{scope.row.four}}</template>
+         <template slot-scope="scope" id="one">{{scope.row.four}}</template>
     </el-table-column>
-    <el-table-column label="作者" show-overflow-tooltip></el-table-column>
-    <el-table-column  label="题型"  show-overflow-tooltip></el-table-column>
-    <el-table-column  label="分数"  show-overflow-tooltip></el-table-column>
-    <el-table-column  label="操作"  show-overflow-tooltip>
-        <template slot-scope="scope">操作</template>
+    <el-table-column  label="题型" show-overflow-tooltip>
+        <template slot-scope="scope">{{scope.row.Question}}</template>
+    </el-table-column>
+    <el-table-column  label="分数"  show-overflow-tooltip>
+         <template slot-scope="scope">{{scope.row.Fraction}}</template>
+    </el-table-column>
+    <el-table-column  label="操作" show-overflow-tooltip>
+       <template slot-scope="scope">
+        <el-button @click="putdanxuan(scope.row.id)" prevent="deleteRow(scope.$index, tableData)" type="text" size="small">操作</el-button>
+        <el-button @click="data(scope.row.id)" prevent="deleteRow(scope.$index, tableData)" type="text" size="small">删除</el-button>
+      </template>
     </el-table-column>
   </el-table>
+   <el-dialog title :visible.sync="dialogFormVisible">
+            <el-form :model="form">
+              <el-form-item :label-width="formLabelWidth">
+                  <span>试题标题</span>
+                <el-input v-model="putclazz" :placeholder="holder" autocomplete="off"></el-input>
+                <br><span>试题选项</span>
+                <br><span>(A)</span>
+                <el-input v-model="putA" autocomplete="off"></el-input>
+                 <br><span>(B)</span>
+                <el-input v-model="putB" autocomplete="off"></el-input>
+                 <br><span>(C)</span>
+                <el-input v-model="putC" autocomplete="off"></el-input>
+                 <br><span>(D)</span>
+                <el-input v-model="putD" autocomplete="off"></el-input>
+                <br><span>试题答案</span>
+                <input type="radio" name="1" value="a" checked style="margin-top:17px;" v-model="putThree" />A
+                <input type="radio" name="1" value="b" checked style="margin-left:3.6%;" v-model=" putThree"/>B
+                <input type="radio" name="1" value="c" checked style="margin-left:3.6%;" v-model=" putThree"/>C
+                <input type="radio" name="1" value="d" checked style="margin-left:3.6%;" v-model=" putThree"/>D
+                <br><span>试题难度</span>
+                <ul class="Label">
+                                <li class="simple" @click="simple">简单</li>
+                                <li class="ordinary" @click="ordinary">普通</li>
+                                <li class="difficulty" @click="difficulty">困难</li>
+                </ul>
+                            <div style="clearfix:after{content:””; display:block; clear:both;padding-top:10px;}"></div>
+                <el-input v-model="putFlour" autocomplete="off"></el-input>
+                <br><span>题型</span>
+                <el-input v-model="putQuestion" autocomplete="off"></el-input>
+                <br><span>分数</span>
+                <el-input v-model="putFraction" autocomplete="off"></el-input>
+              </el-form-item>
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+              <el-button @click="dialogFormVisible = false">取 消</el-button>
+              <el-button type="primary" @click="put()">确 定</el-button>
+            </div>
+</el-dialog>
 </template>
             </div>
         </div>
@@ -54,15 +108,54 @@
 </template>
 <script>
 import axios from "axios";
+import { watch } from 'fs';
 
 export default {
     data(){
         return {
+            putdanxaunId:"",
             tableData: [],
-        }
+            putclazz:"",
+            putA:"",
+            putB:"",
+            putC:"",
+            putD:"",
+            putThree:"",
+            putFlour:"",
+            putFraction:"",
+            putQuestion:"",
+            dialogFormVisible: false,
+            form: {
+                 putclazz:"",
+                 putA:"",
+                 putB:"",
+                 putC:"",
+                 putD:"",
+                 putThree:"",
+                 putFlour:"",
+                 putFraction:"",
+                 putQuestion:""
+      },
+      formLabelWidth: "120px"
+    };
+            var a=document.getElementById("sj").value;
+            this.putclazz = this.a
     },
     
   methods: {
+       simple(){
+            this.putFlour="简单"
+        },
+        ordinary(){
+            this.putFlour="普通"
+        },
+        difficulty(){
+            this.putFlour="困难"
+        },
+       putdanxuan(id) {
+           this.dialogFormVisible = true;
+            this.putdanxaunId = id;
+    },
       toggleSelection(rows) {
         if (rows) {
           rows.forEach(row => {
@@ -75,14 +168,70 @@ export default {
       handleSelectionChange(val) {
         this.multipleSelection = val;
     },
+    data(id) {
+      this.$confirm("此操作将永久删除该文件, 是否继续?", "提示", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning",
+        center: true,
+      })
+        .then(res => {
+          axios
+            .delete("http://127.0.0.1:7001/danxuadelete" + id, {})
+            .then(res => {
+              this.studentList = res.data;
+               this.get()
+            },
+            );
+        },
+        )
+        .catch(() => {
+          this.$message({
+            type: "info",
+            message: "已取消删除",
+          });
+        });
   },
-  created(){
-        axios.get("http://127.0.0.1:7001/danxuaget", {}).then(res => {
+  put() {
+      axios
+        .put("http://127.0.0.1:7001/danxuput" + this.putdanxaunId, {
+            putclazz:this.putclazz,
+            putA:this.putA,
+            putB:this.putB,
+            putC:this.putC,
+            putD:this.putD,
+            putThree:this.putThree,
+            putFlour:this.putFlour,
+            putFraction:this.putFraction,
+            putQuestion:this.putQuestion
+        })
+        .then(res => {
+          this.dialogFormVisible = false;
+          this.clazzList = res.data;
+           this.get(),
+          this.putclazz = "",
+          this.putA=""
+          this.putB=""
+          this.putC=""
+          this.putD=""
+          this.putThree=""
+          this.putThree=""
+          this.putFlour=""
+          this.putFraction=""
+          this.putQuestion=""
+        });
+    },
+    get(){
+      axios.get("http://127.0.0.1:7001/danxuaget", {}).then(res => {
             this.tableData = res.data;
         console.log(this.tableData)
       });
   }
-};
+  },
+  created(){ 
+    this.get()
+  },
+  };
 </script>
 
 
@@ -125,7 +274,7 @@ export default {
     .Left_li{
         width: 100%;
         height: 4.9%;
-        background-color: #84A4BB;
+        background-color: #5D8FB2;
         margin-top: 50px;
         color: #ffffff;
         line-height: 50px;
@@ -448,5 +597,52 @@ left: 23.59%;
         height: 38px;
         border-bottom: 1px solid #D3D3D3;
         background-color: #F6F6F6;
+    }
+
+
+
+    .Label{
+        margin-top: 9px;
+        margin: 0 auto;
+          text-align:center;
+    }
+    .simple{
+        width:7.6%;
+        height:28px;
+        background-color: #e9e9e9;
+        border: none;
+        border: 1px solid #c7c7c7;
+        outline:none;
+        cursor: pointer;
+        font-size: 15px;
+        color: #979797;
+        float: left;
+        line-height: 28px;
+    }
+    .ordinary{
+        width:7.6%;
+        height:28px;
+        background-color: #c7c7c7;
+        border: none;
+        border: 1px solid #c7c7c7;
+        outline:none;
+        cursor: pointer;    
+        font-size: 15px;
+        color: #fcfcfc;
+        float: left;
+        line-height: 28px;
+    }
+    .difficulty{
+        width:7.6%;
+        height:28px;
+        background-color: #a2a2a2;
+        border: none;
+        border: 1px solid #c7c7c7;
+        outline:none;
+        cursor: pointer;    
+        font-size: 15px;
+        color: #ffffff;
+        float: left;
+        line-height: 28px;
     }
 </style>
