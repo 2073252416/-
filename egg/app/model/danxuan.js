@@ -11,6 +11,8 @@ module.exports = app => {
         D:STRING,
         three:STRING,
         four:STRING,
+        Fraction:STRING,
+        Question:STRING
     });
     return Danxua;
 }
