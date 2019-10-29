@@ -99,7 +99,7 @@ export default {
           C:this.C,
           D:this.D,
           three:this.three,  
-          Question:this.Question
+          Question:this.Question,
       })
       .then(
 

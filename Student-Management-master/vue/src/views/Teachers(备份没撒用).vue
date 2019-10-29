@@ -149,23 +149,13 @@ export default {
   el: 'homes',
   methods:{
     student(){
-      // var urls = window.location.href;
-      // if(urls.indexOf("Student") >= 0 ) {
-      //   document.getElementById('student').className = "studentss";
-      //   document.getElementById('content').className = "layoutContentStretch";
-      // }
+     
       var clicks = window.location.href;
       if(clicks.indexOf("Student") >=0 ){
         document.getElementById('teacher').className = "tea";
       }
     },
-    // teacher(){
-    //   var url = window.location.href;
-    //   if(url.indexOf("teacher") >= 0 ) {
-    //     document.getElementById('teacher').style.color = '#1a9df8';
-    //     document.getElementById('student').style.color= '#a6a6a6';
-    //   }
-    // },
+   
   }
 
 }

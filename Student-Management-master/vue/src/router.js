@@ -11,6 +11,8 @@ import Notread from './views/Notread.vue'
 import Randomgeneration from './views/Randomgeneration.vue'
 import Manualmarking from './views/Manualmarking.vue'
 import StudentLogin from './views/StudentLogin.vue'
+import Examinationpapermanagement from './views/Examinationpapermanagement.vue'
+import studentLogin from './views/StudentLogin.vue'
 
 Vue.use(Router)
 
@@ -67,11 +69,16 @@ export default new Router({
             name: 'Manualmarking',
             component: Manualmarking
         },
-        
-    {
-        path: '/StudentLogin',
-        name: 'StudentLogin',
-        component: StudentLogin
-      }
+
+        {
+            path: '/Examinationpapermanagement',
+            name: 'Examinationpapermanagement',
+            component: Examinationpapermanagement
+        },
+        {
+            path: '/StudentLogin',
+            name: 'StudentLogin',
+            component: StudentLogin
+        }
     ]
 })

@@ -12,44 +12,18 @@
       <router-link to="/Epm">
         <li class="Left_li">题库管理</li>
       </router-link>
-      <router-link to="/Marking">
-        <li class="Left_li2">试卷批阅</li>
-      </router-link>
       <router-link to="/Randomgeneration">
-        <li class="Left_li3Sele">随机生成</li>
+        <li class="Left_li2">随机生成</li>
       </router-link>
       <router-link to="/Manualmarking">
-        <li class="Left_li4">人工出卷</li>
+        <li class="Left_li3">人工出卷</li>
+      </router-link>
+      <router-link to="/Examinationpapermanagement">
+        <li class="Left_li4">试卷管理</li>
       </router-link>
     </ul>
     <div class="Right">
       <div class="Cons">
-        <ul class="conents">
-          <li>
-            <p class="Title">14信息安全第二学期期末考试</p>
-            <p class="content">总分100分|考试时长120分钟</p>
-            <el-button class="Del" type="danger" round>
-              <span class="shanchu">删除</span>
-            </el-button>
-            <el-button class="Release" type="success" round>
-              <span class="fabu">发布</span>
-            </el-button>
-            <br>
-            <div class="Division"></div>
-          </li>
-          <li>
-            <p class="Title">14信息安全第二学期期末考试</p>
-            <p class="content">总分100分|考试时长120分钟</p>
-            <el-button class="Del" type="danger" round>
-              <span>删除</span>
-            </el-button>
-            <el-button class="Release" type="success" round>
-              <span>发布</span>
-            </el-button>
-            <br>
-            <div class="Division"></div>
-          </li>
-        </ul>
         <div>
           <el-button class="Random" type="primary" @click="dialogFormVisible = true">
             随机生成
@@ -58,11 +32,11 @@
           <el-dialog width="30%" title="修改" :visible.sync="innerVisible" append-to-body class="tmd">
             <ul class="formul">
               <li>
-                
-                <label for >
+                <label for>
                   题型
                   <input type="text" value="CSS" class="number">
-                </label><label for style="margin-left:61%">
+                </label>
+                <label for style="margin-left:61%">
                   单选题
                   <input type="text" value="30" class="number">
                 </label>
@@ -76,11 +50,11 @@
                 </el-form>
               </li>
               <li>
-                
-                <label for >
+                <label for>
                   题型
                   <input type="text" value="HTML" class="number">
-                </label><label for style="margin-left:61%">
+                </label>
+                <label for style="margin-left:61%">
                   多选题
                   <input type="text" value="30" class="number">
                 </label>
@@ -94,11 +68,11 @@
                 </el-form>
               </li>
               <li>
-                
-                <label for >
+                <label for>
                   题型
                   <input type="text" value="CSS" class="number">
-                </label><label for style="margin-left:61%">
+                </label>
+                <label for style="margin-left:61%">
                   填空题
                   <input type="text" value="30" class="number">
                 </label>
@@ -112,11 +86,11 @@
                 </el-form>
               </li>
               <li>
-              
-                <label for >
+                <label for>
                   题型
                   <input type="text" value="HTML" class="number">
-                </label>  <label for style="margin-left:61%">
+                </label>
+                <label for style="margin-left:61%">
                   解答题
                   <input type="text" value="30" class="number">
                 </label>
@@ -136,54 +110,66 @@
               </li>
             </ul>
           </el-dialog>
-          <el-dialog class="dialogs" width="40%" title :visible.sync="dialogFormVisible">
-            <el-form :model="form">
-              <el-form-item class="formLabelWidth" label="考试名题" :label-width="formLabelWidth">
-                
-                <el-input class="formLabelInput"  v-model="form.name" placeholder="请输入题名" autocomplete="off"></el-input>
-              </el-form-item>
-              <el-form-item class="formLabelWidth" label="考试范围" :label-width="formLabelWidth">
-                <el-select class="formLabelInputs" v-model="form.region" placeholder="请选择活动区域">
-                  <el-option label="五年三考" value="shanghai"></el-option>
-                  <el-option label="惨无人道" value="beijing"></el-option>
-                </el-select>
-              </el-form-item>
-              <div class="bzd">
-                模拟考试题数:
-                <span class="qi">70</span>
-                <router-link to="#">
-                  <span class="tz" @click="innerVisible = true">可修改</span>
-                </router-link>
+
+          <form class="biaodan">
+            <ul>
+              <li class="li" v-for="(item,index) in items">
+                <span class="span1">{{item}}</span><button class="btn1" @click="del(index)">删除</button><button class="btn2">发布</button>
+              </li>
+            </ul>
+            <el-dialog class="dialogs" width="40%" title :visible.sync="dialogFormVisible">
+              <el-form :model="form">
+                <el-form-item class="formLabelWidth" label="考试命题" :label-width="formLabelWidth">
+                  <el-input
+                    class="formLabelInput"
+                    v-model="form.name"
+                    placeholder="请输入题名"
+                    autocomplete="off"
+                  ></el-input>
+                </el-form-item>
+                <el-form-item class="formLabelWidth" label="考试范围" :label-width="formLabelWidth">
+                  <el-select class="formLabelInputs" v-model="form.region" placeholder="请选择活动区域">
+                    <el-option label="五年三考" value="shanghai"></el-option>
+                    <el-option label="惨无人道" value="beijing"></el-option>
+                  </el-select>
+                </el-form-item>
+                <div class="bzd">
+                  模拟考试题数:
+                  <span class="qi">70</span>
+                  <router-link to="#">
+                    <span class="tz" @click="innerVisible = true">可修改</span>
+                  </router-link>
+                </div>
+              </el-form>
+              <div slot="footer" class="dialog_l">
+                <ul class="Label">
+                  <li>考试难度设置</li>
+                  <li>
+                    <input type="radio" name="1" id="a">
+                    <label for="a">简单</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="1" id="b">
+                    <label for="b">普通</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="1" id="c">
+                    <label for="c">困难</label>
+                  </li>
+                </ul>
               </div>
-            </el-form>
-            <div slot="footer" class="dialog_l">
-              <ul class="Label">
-                <li>考试难度设置</li>
-                <li>
-                  <input type="radio" name="1" id="a">
-                  <label for="a">简单</label>
-                </li>
-                <li>
-                  <input type="radio" name="1" id="b">
-                  <label for="b">普通</label>
-                </li>
-                <li>
-                  <input type="radio" name="1" id="c">
-                  <label for="c">困难</label>
-                </li>
-              </ul>
-            </div>
-            <div slot="footer" class="dialog-footer">
-              <el-button
-                style="margin-right: 42%;"
-                type="primary"
-                @click="dialogFormVisible = false"
-              >
-                确 定
-                生 成
-              </el-button>
-            </div>
-          </el-dialog>
+              <div slot="footer" class="dialog-footer">
+                <el-button
+                  style="margin-right: 42%;"
+                  type="submit"
+                  @click="tianjia"
+                >
+                  确 定
+                  生 成
+                </el-button>
+              </div>
+            </el-dialog>
+          </form>
         </div>
       </div>
     </div>
@@ -206,15 +192,30 @@ export default {
         resource: "",
         desc: ""
       },
+      items: ["14信息安全第二学期期末考总分100分丨考试时长120分钟"],
       formLabelWidth: "120px",
       formLabelInput: "301px"
     };
+  },
+  methods: {
+    tianjia: function() {
+      this.dialogFormVisible = false
+       if (this.form.name != "") {
+          this.items.push(this.form.name)
+          this.form.name = ""
+      } else {
+          alert("文本框不能为空")
+      }
+    },
+    del:function(index){
+      this.items.splice(index,1)
+    }
   }
 };
 </script>
 <style scoped>
-.Epm{
-    font-family: "黑体";
+.Epm {
+  font-family: "黑体";
 }
 .formul li {
   margin-bottom: 20px;
@@ -250,13 +251,14 @@ export default {
 }
 
 .Random {
+position: absolute;
   width: 9.3%;
   height: 30px;
   font-size: 15px;
   line-height: 1;
   padding: 7px 20px;
-  margin-top: 134px;
-  margin-left: 46.9%;
+  top: 700px;
+  left: 46.9%;
 }
 .Randomgeneration {
   width: 51.3%;
@@ -396,7 +398,8 @@ li {
 .Left_li2 {
   width: 100%;
   height: 4.9%;
-  background-color: #84a4bb;
+  background-color: #5d8fb2;
+ 
   margin-top: 20px;
   color: #ffffff;
   line-height: 50px;
@@ -487,11 +490,12 @@ li {
 a {
   text-decoration: none;
 }
-.Label[data-v-d903fe56]{
+.Label[data-v-d903fe56] {
   float: left;
   margin-left: 80px;
   margin-top: 30px;
-}.el-button.is-round[data-v-d903fe56] {
+}
+.el-button.is-round[data-v-d903fe56] {
   margin-right: 25px;
   margin-left: -15px;
 }
@@ -499,15 +503,60 @@ a {
   float: left;
   border-radius: 20px;
 } */
-.el-input__inner{
+.el-input__inner {
   border-radius: 20px;
 }
-.el-select .el-input__inner{
+.el-select .el-input__inner {
   border-radius: 10px;
+}
+.biaodan ul .li{
+  float: left;
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid #d5d5d5;
+  text-align: none;
+  float: left;  
+}
+.span1{
+  float: left;
+  /* line-height: 60px; */
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 16px;
+}
+.btn1{
+  float: right;
+  width: 68px;
+  height: 25px;
+  border-radius: 8px;
+  background-color: #4b9e50;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 25px;
+  margin-right: 15px;
+  margin-top: 30px;
+  color: white;
+  font-size: 14px;
+  border: 1px solid #4b9e50;
+}
+.btn2{
+  float: right;
+  width: 68px;
+  height: 25px;
+  border-radius: 8px;
+  background-color: #cf0b0c;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 25px;
+  margin-right: 25px;
+  margin-top: 30px;
+  color: white;
+  font-size: 14px;
+  border: 1px solid #cf0b0c;
 }
 </style>
 <style>
 .myClass input.el-input__inner {
-    border-radius:15px;
+  border-radius: 15px;
 }
 </style>

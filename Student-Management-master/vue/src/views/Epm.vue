@@ -12,14 +12,14 @@
       <router-link to="/Epm">
         <li class="Left_li">题库管理</li>
       </router-link>
-      <router-link to="/Marking">
-        <li class="Left_li2">试卷批阅</li>
-      </router-link>
       <router-link to="/Randomgeneration">
-        <li class="Left_li3">随机生成</li>
+        <li class="Left_li2">随机生成</li>
       </router-link>
       <router-link to="/Manualmarking">
-        <li class="Left_li4">人工出卷</li>
+        <li class="Left_li3">人工出卷</li>
+      </router-link>
+       <router-link to="/Examinationpapermanagement">
+        <li class="Left_li4">试卷管理</li>
       </router-link>
     </ul>
     <div class="Right">
@@ -172,10 +172,6 @@
     </div>
   </div>
 </template>
-            </div>
-        </div>
-    </div>
-</template>
 <script>
 import axios from "axios";
 import { watch } from "fs";
@@ -250,6 +246,7 @@ export default {
             .delete("http://127.0.0.1:7001/danxuadelete" + id, {})
             .then(res => {
               this.studentList = res.data;
+              location.reload(false)
             });
         })
         .catch(() => {
@@ -258,7 +255,6 @@ export default {
             message: "已取消删除"
           });
         });
-      this.get();
     },
     put() {
       axios

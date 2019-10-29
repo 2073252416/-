@@ -9,17 +9,17 @@
       </ul>
     </div>
     <ul class="Left">
-      <router-link to="/Epm">
+        <router-link to="/Epm">
         <li class="Left_li">题库管理</li>
       </router-link>
-      <router-link to="/Marking">
-        <li class="Left_li4">试卷批阅</li>
-      </router-link>
       <router-link to="/Randomgeneration">
-        <li class="Left_li3">随机生成</li>
+        <li class="Left_li2">随机生成</li>
       </router-link>
       <router-link to="/Manualmarking">
-        <li class="Left_li2">人工出卷</li>
+        <li class="Left_li3">人工出卷</li>
+      </router-link>
+      <router-link to="/Examinationpapermanagement">
+        <li class="Left_li4">试卷管理</li>
       </router-link>
     </ul>
     <div class="Right">
@@ -111,7 +111,7 @@ li {
 .Left_li2 {
   width: 100%;
   height: 4.9%;
-  background-color: #5d8fb2;
+  background-color: #84a4bb;
   margin-top: 20px;
   color: #ffffff;
   line-height: 50px;
@@ -120,7 +120,7 @@ li {
 .Left_li3 {
   width: 100%;
   height: 4.9%;
-  background-color: #84a4bb;
+  background-color: #5d8fb2;  
   margin-top: 20px;
   color: #ffffff;
   line-height: 50px;
