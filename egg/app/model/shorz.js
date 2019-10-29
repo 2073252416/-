@@ -3,11 +3,12 @@ module.exports = app => {
         STRING
     } = app.Sequelize;
 
-    const Saqz = app.model.define('saqz', { //sequelize会自动创建主键
+    const Shor = app.model.define('shorz', { //sequelize会自动创建主键
         title: STRING,
         answer: STRING,
         difficulty:STRING
-    });
-    return Saqz
+    })
+    
+    return Shor
     ;
 }
