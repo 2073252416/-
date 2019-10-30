@@ -17,15 +17,7 @@ class RandomService extends Service {
     let zhi = await this.ctx.request.body;
     console.log(zhi);
     const columns = {
-<<<<<<< HEAD
-<<<<<<< HEAD
       Choice_question:zhi.Choice_question,
-=======
-      Choice_question:zhi.jsons.arr.Choice_question,
->>>>>>> 793cf6785e6bf3e3a8ee1bcd6bd2693ec429470c
-=======
-      Choice_question:zhi.jsons.arr.Choice_question,
->>>>>>> 793cf6785e6bf3e3a8ee1bcd6bd2693ec429470c
       A:zhi.A,
       B:zhi.B,
       C:zhi.C,
@@ -67,8 +59,6 @@ class RandomService extends Service {
   
   async rput() {
     let id = this.ctx.params.id
-<<<<<<< HEAD
-<<<<<<< HEAD
     let putChoice_question = this.ctx.request.body.putChoice_question
     let putA = this.ctx.request.body.putA
     let putB = this.ctx.request.body.putB
@@ -116,16 +106,6 @@ class RandomService extends Service {
         difficulty:putdifficulty,
   
         paper_id:putpaper_id,
-=======
-    let title = this.ctx.request.body.title
-    let row = {
-        title: title
->>>>>>> 793cf6785e6bf3e3a8ee1bcd6bd2693ec429470c
-=======
-    let title = this.ctx.request.body.title
-    let row = {
-        title: title
->>>>>>> 793cf6785e6bf3e3a8ee1bcd6bd2693ec429470c
     },
         options = {
             where: {
