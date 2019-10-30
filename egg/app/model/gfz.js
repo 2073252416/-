@@ -7,8 +7,7 @@ module.exports = app => {
         title: STRING,
         answer: STRING,
         difficulty:STRING
-    })
-    
+    });
     return Gfz
     ;
 }

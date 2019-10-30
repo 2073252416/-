@@ -1,4 +1,4 @@
- 'use strict';
+'use strict';
 
 const Service = require('egg').Service;
 
@@ -39,14 +39,12 @@ class DanxuanService extends Service {
     async danxuanlistput() {
         let id = this.ctx.params.id
         const putclazz = this.ctx.request.body.putclazz
-        const putA = this.ctx.request.body.putA
-        const putB = this.ctx.request.body.putB
-        const putC = this.ctx.request.body.putC
-        const putD = this.ctx.request.body.putD
-        const putThree = this.ctx.request.body.putThree
-        const putFlour = this.ctx.request.body.putFlour
-        const putFraction = this.ctx.request.body.putFraction
-        const putQuestion = this.ctx.request.body.putQuestion
+        const putA = this.ctx.request.body.putclazz2
+        const putB = this.ctx.request.body.putclazz3
+        const putC = this.ctx.request.body.putclazz4
+        const putD = this.ctx.request.body.putclazz5
+        const putThree = this.ctx.request.body.putclazz6
+        const putFlour = this.ctx.request.body.putclazz7
         let row = {
             Choice_question:putclazz,
             A: putA,
@@ -55,8 +53,6 @@ class DanxuanService extends Service {
             D:putD,
             three:putThree,
             four:putFlour,
-            Fraction:putFraction,
-            Question:putQuestion
         },
         options = {
             where:{
