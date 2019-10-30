@@ -41,21 +41,21 @@
               <span class="span3">查看</span>
             </li>
             <li>
-              <span class="span4">已判完</span>
+              <span class="span4">测试中</span>
               <span class="span2">
                 14信息安全第二学期期末考
                 <br>总分100分丨考试时长120分钟
               </span>
             </li>
             <li>
-              <span class="span5">已判完</span>
+              <span class="span5">测试中</span>
               <span class="span2">
                 14信息安全第二学期期末考
                 <br>总分100分丨考试时长120分钟
               </span>
             </li>
             <li>
-              <span class="span6">已判完</span>
+              <span class="span6">待用</span>
               <span class="span2">
                 14信息安全第二学期期末考
                 <br>总分100分丨考试时长120分钟
@@ -72,21 +72,21 @@
               <span class="span3">查看</span>
             </li>
             <li>
-              <span class="span4">已判完</span>
+              <span class="span4">测试中</span>
               <span class="span2">
                 14信息安全第二学期期末考
                 <br>总分100分丨考试时长120分钟
               </span>
             </li>
             <li>
-              <span class="span5">已判完</span>
+              <span class="span5">测试中</span>
               <span class="span2">
                 14信息安全第二学期期末考
                 <br>总分100分丨考试时长120分钟
               </span>
             </li>
             <li>
-              <span class="span6">已判完</span>
+              <span class="span6">待用</span>
               <span class="span2">
                 14信息安全第二学期期末考
                 <br>总分100分丨考试时长120分钟
@@ -103,21 +103,21 @@
               <span class="span3">查看</span>
             </li>
             <li>
-              <span class="span4">已判完</span>
+              <span class="span4">测试中</span>
               <span class="span2">
                 14信息安全第二学期期末考
                 <br>总分100分丨考试时长120分钟
               </span>
             </li>
             <li>
-              <span class="span5">已判完</span>
+              <span class="span5">测试中</span>
               <span class="span2">
                 14信息安全第二学期期末考
                 <br>总分100分丨考试时长120分钟
               </span>
             </li>
             <li>
-              <span class="span6">已判完</span>
+              <span class="span6">待用</span>
               <span class="span2">
                 14信息安全第二学期期末考
                 <br>总分100分丨考试时长120分钟
@@ -134,14 +134,14 @@
               <span class="span3">查看</span>
             </li>
             <li>
-              <span class="span4">已判完</span>
+              <span class="span4">测试中</span>
               <span class="span2">
                 14信息安全第二学期期末考
                 <br>总分100分丨考试时长120分钟
               </span>
             </li>
           </ul>
-          <el-pagination class="element" background layout="prev, pager, next" :total="1000"></el-pagination>
+          <el-pagination class="element" background layout="prev, pager, next" :total="80"></el-pagination>
         </div>
       </div>
     </div>
@@ -325,6 +325,7 @@ hr {
   background-color: #ffb21e;
   color: white;
   text-align: center;
+  padding-top: 10px;
 }
 .element {
   clear: both;

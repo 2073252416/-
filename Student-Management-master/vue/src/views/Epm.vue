@@ -18,7 +18,7 @@
       <router-link to="/Manualmarking">
         <li class="Left_li3">人工出卷</li>
       </router-link>
-       <router-link to="/Examinationpapermanagement">
+      <router-link to="/Examinationpapermanagement">
         <li class="Left_li4">试卷管理</li>
       </router-link>
     </ul>
@@ -284,7 +284,7 @@ export default {
           this.putQuestion = "";
         });
     },
-    get() {
+   get() {
       axios.get("http://127.0.0.1:7001/danxuaget", {}).then(res => {
         this.tableData = res.data;
         console.log(this.tableData);
@@ -299,7 +299,6 @@ export default {
 
 
 <style scoped>
-
 * {
   margin: 0;
   padding: 0;
@@ -724,8 +723,8 @@ li {
   float: left;
   line-height: 28px;
 }
-.CT_zhong .shanchu{
-   margin-right: 20px;
+.CT_zhong .shanchu {
+  margin-right: 20px;
   font-size: 1%;
   margin-top: 5px;
   padding-top: 3px;
@@ -740,7 +739,7 @@ li {
 }
 </style>
 <style>
-.el-table .caret-wrapper{
+.el-table .caret-wrapper {
   float: right;
 }
 </style>
