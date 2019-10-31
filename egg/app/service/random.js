@@ -15,36 +15,37 @@ class RandomService extends Service {
   }                 
   async post() {
     let zhi = await this.ctx.request.body;
-    console.log(zhi);
-    const columns = {
-      Choice_question:zhi.Choice_question,
-      A:zhi.A,
-      B:zhi.B,
-      C:zhi.C,
-      D:zhi.D,
-      three:zhi.three,
-      four:zhi.four,
+    var json = zhi.lists;
+    for(var i = 0;i<json.length;i++){
+      const columns = {
+        Choice_question:json[i].Choice_question,
+        A:json[i].A,
+        B:json[i].B,
+        C:json[i].C,
+        D:json[i].D,
+        three:json[i].three,
+        four:json[i].four,
 
-      title:zhi.title,
-      one:zhi.one,
-      two:zhi.two,
-      three:zhi.three,
-      four:zhi.four,
-      a:zhi.a,
-      b:zhi.b,
-      c:zhi.c,
-      d:zhi.d,
-      difficulty:zhi.difficulty,
+        title:json[i].title,
+        one:json[i].one,
+        two:json[i].two,
+        three:json[i].three,
+        four:json[i].four,
+        a:json[i].a,
+        b:json[i].b,
+        c:json[i].c,
+        d:json[i].d,
+        difficulty:json[i].difficulty,
 
-      title:zhi.title,
-      answer:zhi.answer,
-      difficulty:zhi.difficulty,
+        title:json[i].title,
+        answer:json[i].answer,
+        difficulty:json[i].difficulty,
 
-      paper_id:zhi.paper_id,
-    }
+        paper_id:json[i].paper_id,
+      }
     await this.app.model.Random.create(columns);
     }
-
+  }
   async delete(){
     let id = this.ctx.params.id
     const ran = await this.app.model.Random.findOne({
@@ -69,13 +70,10 @@ class RandomService extends Service {
     let puttitle = this.ctx.request.body.puttitle
     let putone = this.ctx.request.body.putone
     let puttwo = this.ctx.request.body.puttwo
-    let putthree = this.ctx.request.body.putthree
-    let putfour = this.ctx.request.body.putfour
     let puta = this.ctx.request.body.puta
     let putb = this.ctx.request.body.putb
     let putc = this.ctx.request.body.putc
     let putd = this.ctx.request.body.putd
-    let putdifficulty = this.ctx.request.body.putdifficulty
     let puttitle = this.ctx.request.body.puttitle
     let putanswer = this.ctx.request.body.putanswer
     let putdifficulty = this.ctx.request.body.putdifficulty

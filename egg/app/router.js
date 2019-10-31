@@ -10,12 +10,7 @@ module.exports = app => {
   router.post('/login',controller.user.login);
   router.post('/registereds',controller.user.create);
 
-
-
   router.post('/denglu',controller.home.denglu);
-
-  
-  
 
 //单选
   router.post('/danxuapost',controller.danxuan.post);
