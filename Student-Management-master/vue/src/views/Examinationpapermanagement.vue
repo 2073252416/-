@@ -1,32 +1,30 @@
 <template>
   <div class="Epm">
     <div class="Top">
-      <ul>
-        <li class="Top_img">
-          <img src="../imgs/01.jpg" alt>
-        </li>
-        <li class="Top_li">爱学习</li>
-      </ul>
+      <span class="name">盛邦升华</span>
     </div>
     <ul class="Left">
-      <router-link to="/Epm">
-        <li class="Left_li">题库管理</li>
-      </router-link>
-      <router-link to="/Randomgeneration">
-        <li class="Left_li2">随机生成</li>
-      </router-link>
-      <router-link to="/Manualmarking">
-        <li class="Left_li3">人工出卷</li>
-      </router-link>
       <router-link to="/Examinationpapermanagement">
-        <li class="Left_li4">试卷管理</li>
+        <li class="Left_li">试卷管理</li>
+      </router-link>
+      <router-link to="/Epm">
+        <li class="Left_li2">题库管理</li>
+      </router-link>
+      <router-link to="/Marking">
+        <li class="Left_li3">阅卷管理</li>
+      </router-link>
+      <router-link to="/">
+        <li class="Left_li4">成绩管理</li>
+      </router-link>
+       <router-link to="/">
+        <li class="Left_lij">学生管理</li>
       </router-link>
     </ul>
     <div class="Right">
       <div class="content">
         <div class="content_top">
-          <router-link to="/Marking">
-            <li class="Left_li5">试卷批阅</li>
+          <router-link to="/Randomgeneration">
+            <li class="Left_li5">生成试卷</li>
           </router-link>
         </div>
         <div class="content-bottom">
@@ -46,6 +44,7 @@
                 14信息安全第二学期期末考
                 <br>总分100分丨考试时长120分钟
               </span>
+               <span class="span3">查看</span>
             </li>
             <li>
               <span class="span5">测试中</span>
@@ -60,6 +59,7 @@
                 14信息安全第二学期期末考
                 <br>总分100分丨考试时长120分钟
               </span>
+               <span class="span3">查看</span>
             </li>
           </ul>
           <ul>
@@ -77,6 +77,7 @@
                 14信息安全第二学期期末考
                 <br>总分100分丨考试时长120分钟
               </span>
+               <span class="span3">查看</span>
             </li>
             <li>
               <span class="span5">测试中</span>
@@ -91,6 +92,7 @@
                 14信息安全第二学期期末考
                 <br>总分100分丨考试时长120分钟
               </span>
+               <span class="span3">查看</span>
             </li>
           </ul>
           <ul>
@@ -108,6 +110,7 @@
                 14信息安全第二学期期末考
                 <br>总分100分丨考试时长120分钟
               </span>
+               <span class="span3">查看</span>
             </li>
             <li>
               <span class="span5">测试中</span>
@@ -122,6 +125,7 @@
                 14信息安全第二学期期末考
                 <br>总分100分丨考试时长120分钟
               </span>
+               <span class="span3">查看</span>
             </li>
           </ul>
           <ul>
@@ -139,6 +143,7 @@
                 14信息安全第二学期期末考
                 <br>总分100分丨考试时长120分钟
               </span>
+               <span class="span3">查看</span>
             </li>
           </ul>
           <el-pagination class="element" background layout="prev, pager, next" :total="80"></el-pagination>
@@ -157,10 +162,18 @@ export default {};
   width: 100%;
   height: 1080px;
   font-family: "黑体";
+  background-color: #f5f5f5;
 }
 .Top {
   height: 4.6%;
-  background-color: #0f8be1;
+  background-color: #03bafc;
+}
+.name{
+  font-size: 23px;
+  color: white;
+  float: left;
+  margin-left: 1.6%;
+  margin-top: 0.5%;;
 }
 li {
   list-style: none;
@@ -179,26 +192,29 @@ li {
 .Left {
   width: 8.3%;
   height: 95.4%;
-  background-color: #90b9d5;
+  background-color: #03bafc;
   float: left;
+  margin-top: 0.1%;
 }
 li {
   text-align: none;
 }
 .Left_li {
+  float: left;
   width: 100%;
   height: 4.9%;
-  background-color: #84a4bb;
-  margin-top: 50px;
+  background-color: #0ea8fe;
   color: #ffffff;
   line-height: 50px;
   text-align: center;
+  margin-top: 7%;
+
 }
 .Left_li2 {
   width: 100%;
   height: 4.9%;
-  background-color: #84a4bb;
-  margin-top: 20px;
+  background-color: #03bafc;
+  margin-top: 13%;
   color: #ffffff;
   line-height: 50px;
   text-align: center;
@@ -206,8 +222,8 @@ li {
 .Left_li3 {
   width: 100%;
   height: 4.9%;
-  background-color: #84a4bb;
-  margin-top: 20px;
+  background-color: #03bafc;
+  margin-top: 13%;
   color: #ffffff;
   line-height: 50px;
   text-align: center;
@@ -215,11 +231,11 @@ li {
 .Left_li4 {
   width: 100%;
   height: 4.9%;
-  margin-top: 20px;
+  background-color: #03bafc;
+  margin-top: 13%;
   color: #ffffff;
   line-height: 50px;
   text-align: center;
-  background-color: #5d8fb2;
 }
 .Right {
   float: left;
@@ -330,5 +346,14 @@ hr {
 .element {
   clear: both;
   margin-left: 32%;
+}
+.Left_lij {
+  width: 100%;
+  height: 4.9%;
+  background-color: #03bafc;
+  margin-top: 13%;
+  color: #ffffff;
+  line-height: 50px;
+  text-align: center;
 }
 </style>

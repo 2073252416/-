@@ -1,29 +1,41 @@
 <template>
   <div class="Epm">
     <div class="Top">
-      <ul>
-        <li class="Top_img">
-          <img src="../imgs/01.jpg" alt>
-        </li>
-        <li class="Top_li">爱学习</li>
-      </ul>
+       <span class="name">盛邦升华</span>
+     <hr class="hr">
     </div>
-    <ul class="Left">
-      <router-link to="/Epm">
-        <li class="Left_li">题库管理</li>
+   <ul class="Left">
+      <router-link to="/Examinationpapermanagement">
+        <li class="Left_li">试卷管理</li>
       </router-link>
-      <router-link to="/Randomgeneration">
-        <li class="Left_li2">随机生成</li>
+      <router-link to="/Epm">
+        <li class="Left_li2">题库管理</li>
       </router-link>
       <router-link to="/Manualmarking">
-        <li class="Left_li3">人工出卷</li>
+        <li class="Left_li3">阅卷管理</li>
       </router-link>
       <router-link to="/Examinationpapermanagement">
-        <li class="Left_li4">试卷管理</li>
+        <li class="Left_li4">成绩管理</li>
+      </router-link>
+       <router-link to="/Examinationpapermanagement">
+        <li class="Left_li4">学生管理</li>
       </router-link>
     </ul>
     <div class="Right">
       <div class="Cons">
+         <ul class="Cons_top">
+          <li class="CT_left">
+            <router-link to="/Randomgeneration">
+              <h6 class="CT_h">随机生成</h6>
+              <div class="mark"></div>
+            </router-link>
+          </li>
+          <li class="CT_right">
+            <router-link to="/Manualmarking">
+              <h6 class="CT_h2">自动生成</h6>
+            </router-link>
+          </li>
+        </ul>
         <div>
           <el-button class="Random" type="primary" @click="dialogFormVisible = true">
             随机生成
@@ -129,8 +141,8 @@
                 </el-form-item>
                 <el-form-item class="formLabelWidth" label="考试范围" :label-width="formLabelWidth">
                   <el-select class="formLabelInputs" v-model="form.region" placeholder="请选择活动区域">
-                    <el-option label="五年三考" value="shanghai"></el-option>
-                    <el-option label="惨无人道" value="beijing"></el-option>
+                    <el-option label="HTML" value="shanghai"></el-option>
+                    <el-option label="CSS" value="beijing"></el-option>
                   </el-select>
                 </el-form-item>
                 <div class="bzd">
@@ -216,6 +228,14 @@ export default {
 <style scoped>
 .Epm {
   font-family: "黑体";
+  background-color: #f5f5f5;
+}
+.name{
+  font-size: 23px;
+  color: white;
+  float: left;
+  margin-left: 1.6%;
+  margin-top: 0.5%;;
 }
 .formul li {
   margin-bottom: 20px;
@@ -353,7 +373,8 @@ position: absolute;
 
 .Top {
   height: 4.6%;
-  background-color: #0f8be1;
+  background-color: #02bbfc;
+
 }
 
 li {
@@ -373,12 +394,56 @@ li {
   margin-left: 0.5%;
   float: left;
 }
-
+.Cons_top {
+  width: 100%;
+  height: 50px;
+}
+.CT_left {
+  float: left;
+  width: 66px;
+  height: 40px;
+  margin-top: 15px;
+  margin-left: 24.6%;
+}
+.CT_h {
+  font-size: 15px;
+  color: #189df8;
+  text-align: center;
+}
+.CT_right {
+  float: left;
+  width: 66px;
+  height: 47px;
+  margin-top: 15px;
+  margin-left: 26.1%;
+}
+.CT_h2 {
+  font-size: 15px;
+  color: #424242;
+  text-align: center;
+  float: left;
+}
+.CT_sapn {
+  float: right;
+  margin-top: 12px;
+}
+.CT_hr {
+  width: 93.3%;
+  border-bottom: 1px solid #e6e6e6;
+  margin-left: 2.6%;
+}
+.mark {
+  width: 100%;
+  height: 2px;
+  margin-top: 17px;
+  background-color: #0f8be1;
+}
 .Left {
   width: 8.3%;
   height: 95.4%;
-  background-color: #90b9d5;
+  background-color: #02bbfc;
   float: left;
+  margin-top: 0.1%;
 }
 
 li {
@@ -386,44 +451,51 @@ li {
 }
 
 .Left_li {
+  float: left;
   width: 100%;
   height: 4.9%;
-  background-color: #84a4bb;
-  margin-top: 50px;
+  background-color: #0ea8fe;
   color: #ffffff;
   line-height: 50px;
   text-align: center;
+  margin-top: 7%;
+
 }
 
 .Left_li2 {
+  float: left;
   width: 100%;
   height: 4.9%;
-  background-color: #5d8fb2;
- 
-  margin-top: 20px;
+  background-color: #03bafc;
   color: #ffffff;
   line-height: 50px;
   text-align: center;
+  margin-top: 13%;
+
 }
 
 .Left_li3 {
+  float: left;
   width: 100%;
   height: 4.9%;
-  background-color: #84a4bb;
-  margin-top: 20px;
+  background-color: #03bafc;
   color: #ffffff;
   line-height: 50px;
   text-align: center;
+  margin-top: 13%;
+
 }
 
 .Left_li4 {
+  float: left;
   width: 100%;
   height: 4.9%;
-  background-color: #84a4bb;
-  margin-top: 20px;
+  background-color: #03bafc;
   color: #ffffff;
   line-height: 50px;
   text-align: center;
+  margin-top: 13%;
+
 }
 
 .Right {
@@ -554,9 +626,22 @@ a {
   font-size: 14px;
   border: 1px solid #cf0b0c;
 }
+.formLabelInput[data-v-d903fe56] {
+  width: 71%;
+}
+.formLabelInputs[data-v-d903fe56]{
+  width: 71%;
+}
+.dialog_l{
+  width: 95%;
+}
+
 </style>
 <style>
 .myClass input.el-input__inner {
   border-radius: 15px;
+}
+.formInputs[data-v-d903fe56]{
+  width:80%;
 }
 </style>

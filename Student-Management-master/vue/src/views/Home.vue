@@ -1,15 +1,13 @@
 <template>
     <div class="cont">
         <div class="top">
-            <ul style="height:50px;">
-                <li class="top_img"><img src="../imgs/01.jpg" alt=""></li>
-                <li class="top_li">爱学习</li>
-            </ul>
+            <span class="name">盛邦升华</span>
         </div>
         <div class="log">
             <img style="
             width:100%;
-            height: 40.7%;
+            height: 40.7%;opacity: 0.4; 
+            filter: alpha(opacity=40);
             " src="../imgs/00.jpg" alt="">
         </div>
         <div class="apps">
@@ -33,7 +31,6 @@
                   placeholder="请输入密码"
                 />
               </li>
-              <!-- <button class="Teacherlogin" type="suimit">登录</button> -->
               <input type="submit" value="登录" class="Teacherlogin">
             </ul>
           </form>
@@ -110,6 +107,7 @@ export default {
     .log{
         width: 100%;
         height: 40.7%;
+        background-color: black;
     }
     .conter{
         height: 50%;
@@ -341,6 +339,16 @@ export default {
   height: 1px;
   border: 0.1px solid #969696;
   margin-left: 40px;
+}
+.name{
+  float: left;
+  width: 98.4%;
+  height: 50px;
+  font-size: 23px;
+  line-height: 50px;
+  background-color: #01befe;
+  color: white;
+  padding-left: 1.6%;
 }
 </style>
 

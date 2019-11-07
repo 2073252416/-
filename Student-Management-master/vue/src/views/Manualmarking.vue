@@ -1,29 +1,41 @@
 <template>
   <div class="Epm">
     <div class="Top">
-      <ul>
-        <li class="Top_img">
-          <img src="../imgs/01.jpg" alt />
-        </li>
-        <li class="Top_li">爱学习</li>
-      </ul>
+      <span class="name">盛邦升华</span>
+     <hr class="hr4">
     </div>
     <ul class="Left">
-        <router-link to="/Epm">
-        <li class="Left_li">题库管理</li>
-      </router-link>
-      <router-link to="/Randomgeneration">
-        <li class="Left_li2">随机生成</li>
-      </router-link>
-      <router-link to="/Manualmarking">
-        <li class="Left_li3">人工出卷</li>
-      </router-link>
       <router-link to="/Examinationpapermanagement">
-        <li class="Left_li4">试卷管理</li>
+        <li class="Left_li">试卷管理</li>
+      </router-link>
+      <router-link to="/Epm">
+        <li class="Left_li2">题库管理</li>
+      </router-link>
+      <router-link to="/Marking">
+        <li class="Left_li3">阅卷管理</li>
+      </router-link>
+      <router-link to="/">
+        <li class="Left_li4">成绩管理</li>
+      </router-link>
+       <router-link to="/">
+        <li class="Left_lij">学生管理</li>
       </router-link>
     </ul>
     <div class="Right">
       <div class="Cons">
+         <ul class="Cons_top">
+          <li class="CT_left">
+            <router-link to="/Randomgeneration">
+              <h6 class="CT_h">随机生成</h6>
+            </router-link>
+          </li>
+          <li class="CT_right">
+            <router-link to="/Manualmarking">
+              <h6 class="CT_h2">自动生成</h6>
+              <div class="mark"></div>
+            </router-link>
+          </li>
+        </ul>
         <div class="CT_hr">
           <el-button class="anniu" type="info" @click="dialogVisible = true">生成试卷</el-button>
           <el-dialog :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
@@ -70,11 +82,12 @@
 .Epm {
   width: 100%;
   height: 1080px;
-  font-family: "黑体"
+  font-family: "黑体";
+  background-color: #f5f5f5;
 }
 .Top {
   height: 4.6%;
-  background-color: #0f8be1;
+  background-color: #03bafc;
 }
 li {
   list-style: none;
@@ -93,26 +106,29 @@ li {
 .Left {
   width: 8.3%;
   height: 95.4%;
-  background-color: #90b9d5;
+  background-color: #03bafc;
   float: left;
+  margin-top: 0.1%;
 }
 li {
   text-align: none;
 }
 .Left_li {
+  float: left;
   width: 100%;
   height: 4.9%;
-  background-color: #84a4bb;
-  margin-top: 50px;
+  background-color: #0ea8fe;
   color: #ffffff;
   line-height: 50px;
   text-align: center;
+  margin-top: 7%;
+
 }
 .Left_li2 {
   width: 100%;
   height: 4.9%;
-  background-color: #84a4bb;
-  margin-top: 20px;
+  background-color: #03bafc;
+  margin-top: 13%;
   color: #ffffff;
   line-height: 50px;
   text-align: center;
@@ -120,8 +136,8 @@ li {
 .Left_li3 {
   width: 100%;
   height: 4.9%;
-  background-color: #5d8fb2;  
-  margin-top: 20px;
+  background-color: #03bafc;
+  margin-top: 13%;
   color: #ffffff;
   line-height: 50px;
   text-align: center;
@@ -129,8 +145,8 @@ li {
 .Left_li4 {
   width: 100%;
   height: 4.9%;
-  background-color: #84a4bb;
-  margin-top: 20px;
+  background-color: #03bafc;
+  margin-top: 13%;
   color: #ffffff;
   line-height: 50px;
   text-align: center;
@@ -148,17 +164,7 @@ li {
   background-color: #ffffff;
   margin-left: 8.3%;
 }
-.Cons_top {
-  width: 100%;
-  height: 71px;
-}
-.CT_left {
-  float: left;
-  width: 66px;
-  height: 40px;
-  margin-top: 15px;
-  margin-left: 24.6%;
-}
+
 .CT_h {
   font-size: 15px;
   color: #424242;
@@ -172,13 +178,7 @@ li {
   margin-top: 11px;
   margin-left: 26.1%;
 }
-.CT_h2 {
-  font-size: 15px;
-  color: #424242;
-  text-align: center;
-  float: left;
-  margin-top: 12px;
-}
+
 .CT_sapn {
   float: right;
   margin-top: 12px;
@@ -197,12 +197,7 @@ li {
   margin-top: 11px;
   margin-right: 20px;
 }
-.mark {
-  width: 100%;
-  height: 2px;
-  margin-top: 7px;
-  background-color: #0f8be1;
-}
+
 .CT_bottom {
   float: left;
   width: 96.15%;
@@ -263,6 +258,70 @@ li {
         width: 10%;
         
     } */
+    .name{
+  font-size: 23px;
+  color: white;
+  float: left;
+  margin-left: 1.6%;
+  margin-top: 0.5%;;
+}
+.Cons_top {
+  width: 100%;
+  height: 50px;
+}
+.CT_left {
+  float: left;
+  width: 66px;
+  height: 40px;
+  margin-top: 3px;
+  margin-left: 24.6%;
+  
+}
+.CT_h {
+  font-size: 15px;
+  color: #189df8;
+  text-align: center;
+}
+.CT_right {
+  float: left;
+  width: 66px;
+  height: 47px;
+  margin-top: 15px;
+  margin-left: 26.1%;
+}
+.CT_h2 {
+  font-size: 15px;
+  color: #189df8;
+  text-align: center;
+  float: left;
+}
+.CT_sapn {
+  float: right;
+  margin-top: 12px;
+}
+.CT_hr {
+  width: 93.3%;
+  border-bottom: 1px solid #e6e6e6;
+  margin-left: 2.6%;
+}
+.mark {
+  width: 100%;
+  height: 2px;
+  margin-top: 34px;
+  background-color: #0f8be1;
+}
+.CT_left a{
+  text-decoration: none;
+}
+.Left_lij {
+  width: 100%;
+  height: 4.9%;
+  background-color: #03bafc;
+  margin-top: 13%;
+  color: #ffffff;
+  line-height: 50px;
+  text-align: center;
+}
 </style>
 
 <script>

@@ -1,18 +1,15 @@
 <template>
   <div class="cont">
     <div class="top">
-      <ul style="height:50px;">
-        <li class="top_img">
-          <img src="../imgs/01.jpg" alt />
-        </li>
-        <li class="top_li">爱学习</li>
-      </ul>
+      <span class="name">盛邦升华</span>
     </div>
     <div class="log">
-      <img
+      <img class="pic"
         style="
             width:100%;
             height: 100%;
+            height: 40.7%;opacity: 0.4; 
+            filter: alpha(opacity=40);
             "
         src="../imgs/007.jpg"
         alt
@@ -66,8 +63,10 @@ li {
   list-style: none;
 }
 .cont {
+  float: left;
   width: 100%;
   height: 100%;
+  background-color: rgba(0,0,0,1)
 }
 .top {
   width: 100%;
@@ -77,6 +76,7 @@ li {
 .log {
   width: 100%;
   height: 100%;
+  background-color: black;
 }
 .conter {
   height: 50%;
@@ -235,6 +235,16 @@ li {
 }
 .footer_p {
   line-height: 18px;
+}
+.name{
+  float: left;
+  width: 98.4%;
+  height: 50px;
+  font-size: 23px;
+  line-height: 50px;
+  background-color: #01befe;
+  color: white;
+  padding-left: 1.6%;
 }
 </style>
 
