@@ -181,7 +181,7 @@ li {
 }
 .CT_h2 {
   font-size: 15px;
-  color: #424242;
+  color: #189df8;
   text-align: center;
   float: left;
 }
