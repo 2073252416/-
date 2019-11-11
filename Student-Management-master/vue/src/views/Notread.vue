@@ -16,7 +16,7 @@
       <router-link to="/">
         <li class="Left_li4">成绩管理</li>
       </router-link>
-       <router-link to="/">
+       <router-link to="/studentLogin">
         <li class="Left_lij">学生管理</li>
       </router-link>
     </ul>
@@ -169,7 +169,7 @@ li {
 }
 .CT_h {
   font-size: 15px;
-  color: #424242;
+  color: #b0b0b0;
   text-align: center;
 }
 .CT_right {

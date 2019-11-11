@@ -3,7 +3,7 @@
     <div class="Top">
        <span class="name">盛邦升华</span>
     </div>
-        <ul class="Left">
+       <ul class="Left">
       <router-link to="/Examinationpapermanagement">
         <li class="Left_li">试卷管理</li>
       </router-link>
@@ -16,7 +16,7 @@
       <router-link to="/">
         <li class="Left_li4">成绩管理</li>
       </router-link>
-       <router-link to="/">
+       <router-link to="/studentLogin">
         <li class="Left_lij">学生管理</li>
       </router-link>
     </ul>
@@ -241,6 +241,9 @@ a {
 }
 .CT_right[data-v-68c1562b] {
   margin-top: 18px;
+}
+.CT_h2{
+  color:#b0b0b0;
 }
 </style>
 

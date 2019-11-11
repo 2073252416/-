@@ -16,7 +16,7 @@
       <router-link to="/">
         <li class="Left_li4">成绩管理</li>
       </router-link>
-       <router-link to="/">
+       <router-link to="/studentLogin">
         <li class="Left_lij">学生管理</li>
       </router-link>
     </ul>

@@ -11,13 +11,13 @@
       <router-link to="/Epm">
         <li class="Left_li2">题库管理</li>
       </router-link>
-      <router-link to="/Manualmarking">
+      <router-link to="/Marking">
         <li class="Left_li3">阅卷管理</li>
       </router-link>
-      <router-link to="/Examinationpapermanagement">
+      <router-link to="/">
         <li class="Left_li4">成绩管理</li>
       </router-link>
-       <router-link to="/Examinationpapermanagement">
+       <router-link to="/studentLogin">
         <li class="Left_li4">学生管理</li>
       </router-link>
     </ul>
@@ -419,7 +419,7 @@ li {
 }
 .CT_h2 {
   font-size: 15px;
-  color: #424242;
+  color: #b0b0b0;
   text-align: center;
   float: left;
 }
