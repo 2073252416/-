@@ -10,8 +10,7 @@ class PaperController extends Controller {
           code:20000,
             data:paper
       }
-      }catch(error){
-          this.ctx.body ={
+      }catch(error){this.ctx.body ={
           code: 30000,
             data: "失败"
           }

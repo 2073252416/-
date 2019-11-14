@@ -14,14 +14,20 @@ class DanxuanService extends Service {
             D:name.D,
             three:name.three,
             four:name. four,
+            FourHe_id:name.FourHe_id
         }
         await this.app.model.Danxuan.create(add)
-        
     }
     // 查询
     async getdanxaunlist() {
-        const danxuanList = await this.app.model.Danxuan.findAll();
-        return danxuanList
+        try{
+            const  danxuanList = await this.app.model.Danxuan
+            const  danxuanLists = await danxuanList.findAll();
+            return danxuanLists
+          }catch (error) {
+            console.log(error);
+            return false;
+          }
     }
     // 删除
     async deletedanxuanlist() {

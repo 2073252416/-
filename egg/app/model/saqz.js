@@ -8,6 +8,12 @@ module.exports = app => {
         answer: STRING,
         difficulty:STRING
     });
+    Saqz.associate = function(){
+        app.model.Saqz.belongsTo(app.model.FourHe,{
+            foreignKey:'FourHe_id',
+            targetKey:'id',
+        })
+    }
     return Saqz
     ;
 }

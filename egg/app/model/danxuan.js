@@ -12,12 +12,12 @@ module.exports = app => {
         three:STRING,
         four:STRING,
     });
-    // Danxua.associate = function(){
-    //     app.model.Danxuan.belongsTo(app.model.Random,{
-    //         foreignKey:'random_id',
-    //         targetKey: 'id',
-    //     })
-    // }
+    Danxua.associate = function(){
+        app.model.Danxuan.belongsTo(app.model.FourHe,{
+            foreignKey:'FourHe_id',
+            targetKey: 'id',
+        })
+    }
     return Danxua;
 
 

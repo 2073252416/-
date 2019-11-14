@@ -8,7 +8,8 @@ class SaqService extends Service {
         const sudent = {
             title:name.title,
             answer:name.answer,
-            difficulty:name.difficulty
+            difficulty:name.difficulty,
+            FourHe_id:name.FourHe_id
 
         }
         await this.app.model.Saqz.create(sudent)

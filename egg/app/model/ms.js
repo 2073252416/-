@@ -16,5 +16,11 @@ module.exports = app => {
         // 难度
         difficulty:STRING
     });
+    Ms.associate = function(){
+        app.model.Ms.belongsTo(app.model.FourHe,{
+            foreignKey:'FourHe_id',
+            targetKey:'id',
+        })
+    }
     return Ms;
 }

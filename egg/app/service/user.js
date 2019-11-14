@@ -3,6 +3,7 @@
 const Service = require('egg').Service;
 
 class UserService extends Service {
+    
     async login() {
         // const md5=require('md5-node'); 
         let name = this.ctx.request.body.name;
@@ -23,6 +24,17 @@ class UserService extends Service {
         }else{
             return"密码错误"
         }
+    }
+
+    async checkLogin(name,password){
+        // const md5=require('md5-node'); 
+        let log = await this.app.model.Log.findOne();
+        if( name = log.name && password == log.password){
+            return true;    
+        }else{
+            return false;
+        }
+        // 判断密码是否正确，正确则登录成功
     }
 }
 

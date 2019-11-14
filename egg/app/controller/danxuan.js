@@ -9,16 +9,19 @@ class DanxuanController extends Controller {
       this.ctx.body = danxuanlast
     }
   //查询试题
-    // async delete() {  
-    //     const danxuanlist = await this.app.model.Danxuan.findAll();//查询数据库中Clazz.
-    //     await this.ctx.render('danxuan_list', {
-    //         danxuanList: danxuanlist//将记录标题'Hello World'插入'posts'表
-    //         //查询条件和结果自定义
-    //     })
-    // }
     async get (){
-      const danxuanlist = await this.ctx.service.danxuan.getdanxaunlist()
-      this.ctx.body=danxuanlist
+    try{
+      const danxuass = await this.ctx.service.danxuan.getdanxaunlist();
+      this.ctx.body = {
+          code:20000,
+            data:danxuass
+      }
+      }catch(error){
+          this.ctx.body ={
+          code: 30000,
+            data: "失败"
+          }
+      }
     }
 // 删除试题
     async destroy() {

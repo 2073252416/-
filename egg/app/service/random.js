@@ -14,7 +14,7 @@ class RandomService extends Service {
     }
   }                 
   async post() {
-    let zhi = await this.ctx.request.body;
+    let zhi = await this.ctx.request.body
     var json = zhi.lists;
     for(var i = 0;i<json.length;i++){
       const columns = {
@@ -60,7 +60,7 @@ class RandomService extends Service {
   
   async rput() {
     let id = this.ctx.params.id
-    let putChoice_question = this.ctx.request.body.putChoice_question
+    let putChoice_question = this.ctx.body.putChoice_question
     let putA = this.ctx.request.body.putA
     let putB = this.ctx.request.body.putB
     let putC = this.ctx.request.body.putC
@@ -74,7 +74,6 @@ class RandomService extends Service {
     let putb = this.ctx.request.body.putb
     let putc = this.ctx.request.body.putc
     let putd = this.ctx.request.body.putd
-    let puttitle = this.ctx.request.body.puttitle
     let putanswer = this.ctx.request.body.putanswer
     let putdifficulty = this.ctx.request.body.putdifficulty
     let putpaper_id = this.ctx.request.body.putpaper_id
