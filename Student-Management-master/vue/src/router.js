@@ -13,6 +13,8 @@ import Manualmarking from './views/Manualmarking.vue'
 import StudentLogin from './views/StudentLogin.vue'
 import Examinationpapermanagement from './views/Examinationpapermanagement.vue'
 import studentLogin from './views/StudentLogin.vue'
+import Studentmanagement from './views/Studentmanagement.vue'
+import Scoremanagement from './views/Scoremanagement.vue'
 
 Vue.use(Router)
 
@@ -79,6 +81,15 @@ export default new Router({
             path: '/StudentLogin',
             name: 'StudentLogin',
             component: StudentLogin
+        },
+        {
+            path: '/Studentmanagement',
+            name: 'Studentmanagement',
+            component: Studentmanagement
+        }, {
+            path: '/Scoremanagement',
+            name: 'Scoremanagement',
+            component: Scoremanagement
         }
     ]
 })

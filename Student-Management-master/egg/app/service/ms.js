@@ -16,6 +16,7 @@ class MsService extends Service {
             c:name.c,
             d:name.d,
             difficulty:name.difficulty,
+            FourHe_id:name.FourHe_id
         }
         await this.app.model.Ms.create(sudent)
     }

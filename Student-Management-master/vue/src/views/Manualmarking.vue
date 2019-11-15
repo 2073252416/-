@@ -14,10 +14,10 @@
       <router-link to="/Marking">
         <li class="Left_li3">阅卷管理</li>
       </router-link>
-      <router-link to="/">
+      <router-link to="/Scoremanagement">
         <li class="Left_li4">成绩管理</li>
       </router-link>
-       <router-link to="/studentLogin">
+       <router-link to="/Studentmanagement">
         <li class="Left_lij">学生管理</li>
       </router-link>
     </ul>
