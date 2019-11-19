@@ -650,6 +650,9 @@ a {
   margin-top: 635px;
   margin-left: 9%;
 }
+.el-dialog__wrapper{
+  height:1000px; 
+}
 </style>
 <style>
 .myClass input.el-input__inner {

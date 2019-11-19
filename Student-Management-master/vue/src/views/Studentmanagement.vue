@@ -58,6 +58,9 @@ type="danger"
 </template>
 </el-table-column>
       </el-table>
+    
+
+  <div class="qwe">
     <el-dialog title :visible.sync="dialogFormVisible" style="width:40%; position: fixed; left:30%; top:200px; height:600px">
             <span class="xiugai">修改</span>
             <hr class="hr">
@@ -71,9 +74,9 @@ type="danger"
             </select>
             <label for="" class="studentid">学号:</label>
             <input type="text" class="idinput" placeholder="3784598">
-            <button class="queren">确认</button>
+            <button class="queren" @click="dialogFormVisible=false">确认</button>
     </el-dialog>
-    <el-dialog title :visible.sync="addOrupdateVisible">
+    <el-dialog :visible.sync="addOrupdateVisible">
              <span class="xiugai">添加</span>
             <hr class="hr">
             <label class="studentname" for="">学生姓名:</label>
@@ -86,8 +89,11 @@ type="danger"
             </select>
             <label for="" class="studentid">学号:</label>
             <input type="text" class="idinput">
-            <button class="queren">确认</button>
+            <button class="queren" @click="addOrupdateVisible=false">确认</button>
     </el-dialog>
+  </div>
+
+    
     </div>
     <div class="footer">
       <el-pagination
@@ -475,6 +481,10 @@ li {
   margin-top: 635px;
   margin-left: 9%;
 }
+.el-dialog{
+  height: 280px;
+}
+
 </style>
 <style>
 
@@ -494,8 +504,8 @@ li {
 }.el-dialog__wrapper {
   height:500px; 
 }
-.el-dialog__body{
-  height:180px
+.qwe .el-dialog__body{
+  height: 180px;
 }
 .el-table tr {
   height:40px;
