@@ -19,6 +19,7 @@
        <router-link to="/Studentmanagement">
         <li class="Left_lij">学生管理</li>
       </router-link>
+      <button class="tuichu">退出</button>
     </ul>
     <div class="Right">
       <div class="Cons">
@@ -241,6 +242,17 @@ li {
 }
 a {
   text-decoration: none;
+}
+.tuichu{
+  float: left;
+  width: 44%;
+  height: 30px;
+  background-color: transparent;
+  color: #fffffd;
+  border-radius: 10px;
+  border: 1px solid #fffffd;
+  margin-top: 635px;
+  margin-left: 9%;
 }
 </style>
 <style>

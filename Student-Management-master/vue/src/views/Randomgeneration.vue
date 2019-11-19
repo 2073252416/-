@@ -20,6 +20,7 @@
        <router-link to="/Studentmanagement">
         <li class="Left_li4">学生管理</li>
       </router-link>
+      <button class="tuichu">退出</button>
     </ul>
     <div class="Right">
       <div class="Cons">
@@ -635,7 +636,20 @@ a {
 .dialog_l{
   width: 95%;
 }
-
+.el-dialog{
+  height: 400px
+}
+.tuichu{
+  float: left;
+  width: 44%;
+  height: 30px;
+  background-color: transparent;
+  color: #fffffd;
+  border-radius: 10px;
+  border: 1px solid #fffffd;
+  margin-top: 635px;
+  margin-left: 9%;
+}
 </style>
 <style>
 .myClass input.el-input__inner {
@@ -644,4 +658,5 @@ a {
 .formInputs[data-v-d903fe56]{
   width:80%;
 }
+
 </style>

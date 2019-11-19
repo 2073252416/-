@@ -19,6 +19,7 @@
       <router-link to="/Studentmanagement">
         <li class="Left_lij">学生管理</li>
       </router-link>
+      <button class="tuichu">退出</button>
     </ul>
     <div class="content">
         <span class="xinxi">学生信息</span>
@@ -57,7 +58,7 @@ type="danger"
 </template>
 </el-table-column>
       </el-table>
-    <el-dialog title :visible.sync="dialogFormVisible" style="width:40%; position: fixed; left:30%; top:200px">
+    <el-dialog title :visible.sync="dialogFormVisible" style="width:40%; position: fixed; left:30%; top:200px; height:600px">
             <span class="xiugai">修改</span>
             <hr class="hr">
             <label class="studentname" for="">学生姓名:</label>
@@ -94,7 +95,6 @@ type="danger"
   layout="prev, pager, next"
   :total="1000">
 </el-pagination>
-    </div>
     </div>
   </div>
 </template>
@@ -358,10 +358,6 @@ li {
   margin-left: 46%;
   margin-top: -40px;
 }
-.el-dialog{
-  float:left;
-  margin-left: 50%;
-  }
 .hr{
   float: left;
   width: 95%;
@@ -457,9 +453,6 @@ li {
   margin-top: 60px;
   margin-left: 33%;
 }
-.el-dialog__body{
-  height: 400px;
-}
 .el-dialog__wrapper{
   width: 40%;
     position: fixed;
@@ -468,15 +461,19 @@ li {
     z-index: 2013;
     font-size: 16px;
 }
-.el-dialog__header{
-  font-size: 16px;
-
-}
-.el-dialog__body{
-  font-size: 16px;
-}
 .el-button--danger{
   background-color: #fe0000;
+}
+.tuichu{
+  float: left;
+  width: 44%;
+  height: 30px;
+  background-color: transparent;
+  color: #fffffd;
+  border-radius: 10px;
+  border: 1px solid #fffffd;
+  margin-top: 635px;
+  margin-left: 9%;
 }
 </style>
 <style>
@@ -497,11 +494,11 @@ li {
 }.el-dialog__wrapper {
   height:500px; 
 }
-.el-dialog {
-  height:280px;
+.el-dialog__body{
+  height:180px
 }
 .el-table tr {
-  height:60px;
+  height:40px;
 }
 .el-table thead button:hover{
   background-color: #00bdfd;
